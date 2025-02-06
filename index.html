@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+        <style>
+            .button {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #04AA6D;
+}
+
+.button1:hover {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.button2 {
+  background-color: white;
+  color: black;
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: red;
+  color: white;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    background-color: pink;
+}
+
+h1 {
+    font-family: 'Allura', sans-serif;
+    font-stretch: semi-expanded;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom:20px
+}
+
+img {
+    margin-bottom: 20px;
+}
+
+#thankYouMessage {
+    display: none;
+    font-size: 20px;
+    color: black;
+}
+        </style>
+        <body>
+            <div id="content">
+                <h1>Will you be my Valentine?</h1>
+                <img src="ss.jpg" width="500" height="300">
+                
+                <div class="button-container">
+                    <button class="button button1" id="yesBtn">YESSS</button> 
+                    <button class="button button2" id="noBtn">NO</button>
+                </div>
+        
+                <div id="thankYouMessage" style="display: none;">
+                    Wrong answer bubu, choose again! &#10084;&#128536; 
+                </div>
+            </div>
+        
+            <script>
+                const yesButton = document.getElementById('yesBtn');
+                const noButton = document.getElementById('noBtn');
+                const content = document.getElementById('content');
+                const thankYouMessage = document.getElementById('thankYouMessage');
+                yesButton.addEventListener('click', function() {
+                    content.innerHTML = '';
+
+                    const newHeading = document.createElement('h1');
+                    newHeading.textContent = 'Thank you for being my Valentine jii! 💖';
+                    content.appendChild(newHeading);
+                    
+                    const newImage = document.createElement('img');
+                    newImage.src = 'final.jpg';
+                    newImage.width = 500;
+                    newImage.height = 550;
+                    content.appendChild(newImage);
+                    const finalHeading = document.createElement('h1')
+                    finalHeading.textContent = 'See you on 14th bubu \uD83D\uDE18😊'
+                    content.appendChild(finalHeading)
+                });
+        
+                noButton.addEventListener('click', function() {
+                    thankYouMessage.style.display = 'block';
+                });
+            </script>
+        </body>
+        
+        
+    </head>
